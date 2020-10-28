@@ -1,0 +1,19 @@
+Database design :
+
+Teams (id,  team_name, captain_name, coach_name, matches_played )
+
+ Constraints on teams :-
+1.	id : primary key
+2.	team_name : unique 
+
+
+match(id, date, team_1, team_2, runs_by_1, runs_by_2, wickets_lost_1, wickets_lost_2, fours_by_1, fours_by_2, sixes_by_1, sixes_by_2, motm, overs ) 
+
+Constraints on match :- 
+1.	id :- primary key
+2.	runs >= 4*fours && runs >= 6*sixes && runs >= 4*fours + 6*sixes
+3.	wickets <= 11
+
+Potential constraints :
+
+1.	If a team name is not in teams database it can’t play a match (i.e it can’t be added in the match table as neither team_1 nor team_2)
